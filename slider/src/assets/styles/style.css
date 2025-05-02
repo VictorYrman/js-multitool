@@ -13,10 +13,7 @@ body {
   color: var(--white-color);
 }
 
-a {
-  color: var(--secondary-color);
-}
-
+a,
 .text--secondary {
   color: var(--secondary-color);
 }
