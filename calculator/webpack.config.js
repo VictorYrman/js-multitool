@@ -37,6 +37,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "index.html",
+      inject: "body",
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -51,5 +52,14 @@ module.exports = {
       filename: "style.css",
     }),
   ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+    compress: true,
+    port: 9000,
+    hot: true,
+    historyApiFallback: true,
+  },
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
 };

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/normalize.css" />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <script type="module" src="./index.js" defer></script>
+    <title>Калькулятор</title>
+  </head>
+  <body data-theme="light">
+    <div class="calculator">
+      <div class="container calculator__container">
+        <div class="calculator__content">
+          <div class="calculator__toggle">
+            <button type="button" class="btn--toggle">
+              <span class="circle"></span>
+            </button>
+            <span class="text--toggle">Переключить на тёмную тему</span>
+          </div>
+          <div class="history">
+            <ul class="history__list">
+              <li class="history__item"></li>
+            </ul>
+          </div>
+          <input
+            type="text"
+            class="input input--display"
+            id="display"
+            placeholder="0"
+            disabled
+          />
+        </div>
+        <div class="btns calculator__btns">
+          <button type="button" class="btn btn--light" id="clear">AC</button>
+          <button type="button" class="btn btn--light" id="backspace">
+            <img
+              width="32"
+              height="32"
+              src="./assets/images/icons/backspace-black.svg"
+              alt="Backspace Иконка"
+            />
+          </button>
+          <button type="button" class="btn btn--light" data-value="%">%</button>
+          <button
+            type="button"
+            class="btn btn--accent"
+            id="divide"
+            data-value="/"
+          >
+            <img
+              width="32"
+              height="32"
+              src="./assets/images/icons/division.svg"
+              alt="Иконка Деления"
+            />
+          </button>
+
+          <button type="button" class="btn" data-value="7">7</button>
+          <button type="button" class="btn" data-value="8">8</button>
+          <button type="button" class="btn" data-value="9">9</button>
+          <button
+            type="button"
+            class="btn btn--accent"
+            id="multiply"
+            data-value="*"
+          >
+            <img
+              width="32"
+              height="32"
+              src="./assets/images/icons/multiplication.svg"
+              alt="Иконка Произведения"
+            />
+          </button>
+
+          <button type="button" class="btn" data-value="4">4</button>
+          <button type="button" class="btn" data-value="5">5</button>
+          <button type="button" class="btn" data-value="6">6</button>
+          <button
+            type="button"
+            class="btn btn--accent"
+            id="subtract"
+            data-value="-"
+          >
+            <img
+              width="32"
+              height="32"
+              src="./assets/images/icons/subtraction.svg"
+              alt="Иконка Вычитания"
+            />
+          </button>
+
+          <button type="button" class="btn" data-value="1">1</button>
+          <button type="button" class="btn" data-value="2">2</button>
+          <button type="button" class="btn" data-value="3">3</button>
+          <button type="button" class="btn btn--accent" id="add" data-value="+">
+            <img
+              width="32"
+              height="32"
+              src="./assets/images/icons/addition.svg"
+              alt="Иконка Сложения"
+            />
+          </button>
+
+          <button type="button" class="btn btn--light" id="more">
+            <img
+              width="32"
+              height="32"
+              src="./assets/images/icons/more-black.svg"
+              alt="More Иконка"
+            />
+          </button>
+          <button type="button" class="btn" data-value="0">0</button>
+          <button type="button" class="btn" data-value="." id="point">.</button>
+          <button type="button" class="btn btn--gradient" id="equal">
+            <img
+              width="32"
+              height="32"
+              src="./assets/images/icons/equal.svg"
+              alt="Иконка Равенства"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
