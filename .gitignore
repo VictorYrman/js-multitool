@@ -3,3 +3,6 @@ slider/dist
 
 calculator/node_modules
 calculator/dist
+
+pomodoro/node_modules
+pomodoro/dist

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/normalize.css" />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <script type="module" src="./index.js" defer></script>
+    <link rel="manifest" crossorigin="use-credentials" href="./manifest.json" />
+    <title>Таймер Помодоро</title>
+  </head>
+  <body data-theme="pomodoro">
+    <header class="header">
+      <div class="container">
+        <div class="header__upper">
+          <a href="/" class="logo">Таймер Помодоро</a>
+          <button type="button" class="btn btn--transparent header__btn">
+            <img
+              width="24"
+              height="24"
+              src="./assets/images/icons/settings.svg"
+              alt="Иконка Настройки"
+            />
+            Настройки
+          </button>
+        </div>
+        <div class="progress">
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="modal">
+      <div class="modal__container">
+        <header class="modal__header">
+          <h2 class="modal__title">Настройки</h2>
+          <button type="button" class="btn close">
+            <img src="./assets/images/icons/close.svg" alt="Крестик Иконка" />
+          </button>
+        </header>
+
+        <span class="line"></span>
+
+        <form class="modal__form">
+          <h3 class="modal__subtitle">Таймер</h3>
+          <div class="modal__section">
+            <h4>Время (минуты)</h4>
+            <div class="modal__input-section">
+              <div class="modal__input-wrapper">
+                <label for="">Помодоро</label>
+                <input
+                  type="number"
+                  class="input"
+                  id="pomodoroInput"
+                  minlength="1"
+                  maxlength="60"
+                />
+              </div>
+              <div class="modal__input-wrapper">
+                <label for="">Кор. пер.</label>
+                <input
+                  type="number"
+                  class="input"
+                  id="shortBreakInput"
+                  minlength="1"
+                  maxlength="60"
+                />
+              </div>
+              <div class="modal__input-wrapper">
+                <label for="">Длин. пер.</label>
+                <input
+                  type="number"
+                  class="input"
+                  id="longBreakInput"
+                  minlength="1"
+                  maxlength="60"
+                />
+              </div>
+            </div>
+            <div class="modal__radio-section">
+              <h4>Автостарт перерывов</h4>
+              <div class="modal__radio-wrapper">
+                <input type="checkbox" id="breakAutostart" />
+                <label for="breakAutostart" class="checkbox">
+                  <span class="checkbox__circle"></span>
+                </label>
+              </div>
+            </div>
+            <div class="modal__radio-section">
+              <h4>Автостарт помодоро</h4>
+              <div class="modal__radio-wrapper">
+                <input type="checkbox" id="pomodoroAutostart" />
+                <label for="pomodoroAutostart" class="checkbox">
+                  <span class="checkbox__circle"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <footer class="modal__footer">
+          <button type="submit" class="btn btn--black modal__btn--ok">
+            OK
+          </button>
+        </footer>
+      </div>
+    </div>
+
+    <main class="main">
+      <div class="container">
+        <section class="timer">
+          <div class="btns timer__btns">
+            <button
+              type="button"
+              class="btn btn--active timer__btn timer__btn--pomodoro"
+            >
+              Помодоро
+            </button>
+            <button type="button" class="btn timer__btn timer__btn--short">
+              Короткий перерыв
+            </button>
+            <button type="button" class="btn timer__btn timer__btn--long">
+              Длинный перерыв
+            </button>
+          </div>
+
+          <div class="time timer__time">25:00</div>
+
+          <div class="btn-wrapper">
+            <button type="button" class="btn btn--white timer__btn--start">
+              Start
+            </button>
+            <span></span>
+          </div>
+
+          <button type="button" class="btn timer__btn--next">
+            <img
+              src="./assets/images/icons/skip-next.svg"
+              alt="Пропустить (Следующее) Иконка"
+            />
+          </button>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

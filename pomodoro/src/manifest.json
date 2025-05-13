@@ -1,0 +1,33 @@
+{
+  "name": "Pomodoro Timer",
+  "short_name": "Pomodoro",
+  "description": "Таймер Pomodoro позволяет вам организовать свое рабочее время. Вы сможете установить время, сколько вы будете работать, и время, сколько вы будете отдыхать. Таким образом процесс работы станет более продуктивным.",
+  "start_url": "https://js-multitool.netlify.app/pomodoro/src/",
+  "version": "1",
+  "lang": "ru-RU",
+  "theme-color": "#b94646",
+  "background-color": "#b94646",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay"],
+  "orientation": "portrait",
+  "icons": [
+    {
+      "purpose": "any",
+      "src": "./assets/images/favicons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "src": "./assets/images/favicons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "src": "./assets/images/favicons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
