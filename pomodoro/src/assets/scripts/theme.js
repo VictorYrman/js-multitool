@@ -11,10 +11,10 @@ const updateBrowserThemeColor = (theme) => {
       metaThemeColor.setAttribute("content", "#b94646");
       break;
     case "short":
-      metaThemeColor.setAttribute("content", "#3fa6a6");
+      metaThemeColor.setAttribute("content", "#386e94");
       break;
     case "long":
-      metaThemeColor.setAttribute("content", "#386e94");
+      metaThemeColor.setAttribute("content", "#3fa6a6");
       break;
   }
 };
