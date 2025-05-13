@@ -4,17 +4,25 @@ export const changeTheme = (theme) => {
 };
 
 const updateBrowserThemeColor = (theme) => {
-  const metaThemeColor = document.querySelector("#theme-color");
+  const colors = {
+    pomodoro: { top: "#ffffff", bottom: "#b94646" },
+    short: { top: "#ffffff", bottom: "#386e94" },
+    long: { top: "#ffffff", bottom: "#3fa6a6" },
+  };
 
-  switch (theme) {
-    case "pomodoro":
-      metaThemeColor.setAttribute("content", "#b94646");
-      break;
-    case "short":
-      metaThemeColor.setAttribute("content", "#386e94");
-      break;
-    case "long":
-      metaThemeColor.setAttribute("content", "#3fa6a6");
-      break;
+  const { top, bottom } = colors[theme] || colors.pomodoro;
+
+  document.querySelector('meta[name="theme-color"]').content = top;
+
+  if (window.chrome && window.chrome.webview) {
+    window.chrome.webview.postMessage({
+      type: "navigationBarColor",
+      color: bottom,
+    });
+  }
+
+  if ("virtualKeyboard" in navigator) {
+    navigator.virtualKeyboard.overlaysContent = true;
+    document.documentElement.style.setProperty("--keyboard-color", bottom);
   }
 };

@@ -85,14 +85,16 @@ const loadStartBtn = () => {
 
       Progress.initProgress(timer);
 
-      window.timerInterval = setInterval(() => {
-        Progress.updateProgress();
+      const { minutes, seconds } = convertTimerToTime(timer);
+      document.querySelector(".time").textContent = `${minutes}:${seconds}`;
 
-        convertTimerToTime(timer);
+      window.timerInterval = setInterval(() => {
+        timer.setSeconds(timer.getSeconds() - 1);
 
         const { minutes, seconds } = convertTimerToTime(timer);
-
         document.querySelector(".time").textContent = `${minutes}:${seconds}`;
+
+        Progress.updateProgress();
 
         if (minutes === "00" && seconds === "00") {
           playSound("./assets/audio/notification.mp3");
@@ -111,20 +113,10 @@ const loadStartBtn = () => {
 
           return;
         }
-
-        timer.setSeconds(timer.getSeconds() - 1);
       }, 1000);
 
       playSound("./assets/audio/btn-tap.mp3");
-
-      btn.textContent = "Pause";
-
-      btn.style.top = "0.5rem";
-      btn.classList.remove("timer__btn--start");
-      btn.classList.add("timer__btn--pause");
-
-      document.querySelector(".timer__btn--next").style.visibility = "visible";
-      document.querySelector(".timer__btn--next").style.opacity = "1";
+      setBtnToPause(btn);
     } else {
       clearInterval(window.timerInterval);
       resetBtn();
@@ -143,6 +135,17 @@ const resetBtn = () => {
 
   document.querySelector(".timer__btn--next").style.visibility = "hidden";
   document.querySelector(".timer__btn--next").style.opacity = "0";
+};
+
+const setBtnToPause = (btn) => {
+  btn.textContent = "Pause";
+
+  btn.style.top = "0.5rem";
+  btn.classList.remove("timer__btn--start");
+  btn.classList.add("timer__btn--pause");
+
+  document.querySelector(".timer__btn--next").style.visibility = "visible";
+  document.querySelector(".timer__btn--next").style.opacity = "1";
 };
 
 const resetTimer = () => {
