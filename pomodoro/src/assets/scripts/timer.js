@@ -1,5 +1,5 @@
 let timer;
-let pomodoroTimer = new Date(0, 0, 0, 0, 25, 0, 0);
+let pomodoroTimer = new Date(0, 0, 0, 0, 30, 0, 0);
 let shortBreakTimer = new Date(0, 0, 0, 0, 5, 0, 0);
 let longBreakTimer = new Date(0, 0, 0, 0, 15, 0, 0);
 let breakAutostart = false;

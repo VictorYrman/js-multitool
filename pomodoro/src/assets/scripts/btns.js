@@ -2,6 +2,8 @@ import * as Theme from "./theme.js";
 import * as Timer from "./timer.js";
 import * as Progress from "./progress.js";
 import * as Modal from "./modal.js";
+import * as Counter from "./counter.js";
+import { playSound, convertTimerToTime } from "./utils.js";
 
 window.timerInterval = null;
 
@@ -42,6 +44,9 @@ const loadTimerBtns = () => {
         );
         setTimerType(`${minutes}:${seconds}`, "pomodoro");
 
+        document.querySelector(".timer-counter__description").textContent =
+          "Время концентрации!";
+
         if (Timer.getPomodoroAutostart())
           document.querySelector(".timer__btn--start").click();
       }
@@ -52,6 +57,9 @@ const loadTimerBtns = () => {
         );
         setTimerType(`${minutes}:${seconds}`, "short");
 
+        document.querySelector(".timer-counter__description").textContent =
+          "Время отдыха!";
+
         if (Timer.getBreakAutostart())
           document.querySelector(".timer__btn--start").click();
       }
@@ -61,6 +69,9 @@ const loadTimerBtns = () => {
           Timer.getLongBreakTimer()
         );
         setTimerType(`${minutes}:${seconds}`, "long");
+
+        document.querySelector(".timer-counter__description").textContent =
+          "Время отдыха!";
 
         if (Timer.getBreakAutostart())
           document.querySelector(".timer__btn--start").click();
@@ -94,6 +105,8 @@ const loadStartBtn = () => {
         const { minutes, seconds } = convertTimerToTime(timer);
         document.querySelector(".time").textContent = `${minutes}:${seconds}`;
 
+        Theme.changeTitle({ minutes, seconds });
+
         Progress.updateProgress();
 
         if (minutes === "00" && seconds === "00") {
@@ -102,14 +115,18 @@ const loadStartBtn = () => {
           clearInterval(timerInterval);
           resetBtn();
 
-          if (document.body.dataset.theme === "pomodoro")
+          if (document.body.dataset.theme === "pomodoro") {
+            Counter.incrementPomodoroCounter();
             return document.querySelector(".timer__btn--short").click();
+          }
 
           if (
             document.body.dataset.theme === "short" ||
             document.body.dataset.theme === "long"
-          )
+          ) {
+            Counter.incrementBreakCounter();
             return document.querySelector(".timer__btn--pomodoro").click();
+          }
 
           return;
         }
@@ -168,17 +185,4 @@ const handleBtn = (element) => {
 const setTimerType = (timerTime, type) => {
   document.querySelector(".time").textContent = `${timerTime}`;
   Theme.changeTheme(`${type}`);
-};
-
-const playSound = (audio) => {
-  const sound = new Audio(audio);
-
-  sound.play();
-};
-
-const convertTimerToTime = (timer) => {
-  return {
-    minutes: timer.getMinutes().toString().padStart(2, "0"),
-    seconds: timer.getSeconds().toString().padStart(2, "0"),
-  };
 };
