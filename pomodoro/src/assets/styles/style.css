@@ -345,7 +345,7 @@ input[type="checkbox"]:checked + .checkbox {
   padding: 1rem;
 }
 
-.timer-counter {
+section.timer-counter {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -353,12 +353,12 @@ input[type="checkbox"]:checked + .checkbox {
   margin-top: 2rem;
 }
 
-.timer-counter__count {
+section.timer-counter .timer-counter__count {
   font-size: 1.25rem;
   color: var(--grey-color);
 }
 
-.timer-counter__description {
+section.timer-counter .timer-counter__description {
   font-size: 1.5rem;
   font-weight: 700;
 }
