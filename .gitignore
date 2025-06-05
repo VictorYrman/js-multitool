@@ -6,3 +6,10 @@ calculator/dist
 
 pomodoro/node_modules
 pomodoro/dist
+
+labyrinth/node_modules
+labyrinth/dist
+
+weather-api/node_modules
+weather-api/dist
+weather-api/src/.env

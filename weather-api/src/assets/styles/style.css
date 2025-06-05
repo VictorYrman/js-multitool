@@ -1,0 +1,205 @@
+/* Variables */
+
+:root {
+  --primary-color: hsl(189, 100%, 85%);
+  --background-color: hsl(189, 100%, 95%);
+  --black-color: #000000;
+  --white-color: #ffffff;
+}
+
+/* Animation Styles */
+
+@keyframes leap {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40%,
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Common Styles */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-color);
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  visibility: hidden;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+input[type="checkbox"] + label::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--black-color);
+  border-radius: 0.5rem;
+}
+
+input[type="checkbox"]:checked + label::before {
+  background-image: url("../images/icons/check-mark.svg");
+  background-position: center;
+  background-color: var(--primary-color);
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.dot {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--background-color);
+  animation-name: leap;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.container {
+  max-width: 30rem;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem 2rem;
+}
+
+.input,
+.btn,
+.card__paragraph,
+.settings__label {
+  font-size: 1.25rem;
+}
+
+.input {
+  width: 100%;
+  border: 2px solid var(--black-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.btn {
+  font-weight: 700;
+  background-color: var(--primary-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+/* Card Styles */
+
+.card,
+.card__weather,
+.card__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  width: 18rem;
+  gap: 1rem;
+  background-color: var(--white-color);
+  border-radius: 0.5rem;
+  padding-block: 1rem 2rem;
+  margin-inline: auto;
+}
+
+.card__weather {
+  width: 100%;
+  background-color: var(--primary-color);
+  position: relative;
+  padding: 1rem;
+}
+
+.card__weather,
+.card__description {
+  gap: 0.5rem;
+}
+
+.card__description {
+  visibility: hidden;
+}
+
+.card__paragraph {
+  text-align: center;
+}
+
+.card__title {
+  font-size: 1.5rem;
+}
+
+.card__title,
+.card__paragraph--temperature {
+  font-weight: 700;
+}
+
+.card__paragraph--city {
+  font-style: italic;
+}
+
+.card__image {
+  width: 5rem;
+  height: 5rem;
+}
+
+/* Input Styles */
+
+.input--city {
+  margin-top: 1rem;
+  background-color: transparent;
+}
+
+/* Settings Styles */
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Media Styles */
+
+@media (max-width: 400px) {
+  html {
+    font-size: 14px;
+  }
+}

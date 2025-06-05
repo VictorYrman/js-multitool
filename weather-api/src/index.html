@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Веб-сайт для погоды, по умолчанию загружает погоду в вашем городе, но вы можете узнать погоду в соответствующем городе, указав его в поле ввода, а также показывать температуру в Фаренгейтах или градусах."
+    />
+    <meta
+      name="keywords"
+      content="Погода API, погода, город, Фаренгейт, градус"
+    />
+    <meta name="author" content="TheYrman" />
+    <meta property="og:title" content="Погода API на JavaScript" />
+    <meta
+      property="og:description"
+      content="Веб-сайт для погоды, вы можете узнать погоду в вашем или в любом другом городе."
+    />
+    <meta
+      property="og:url"
+      content="https://js-multitool.netlify.app/weather-api/src/"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./assets/images/og-image.png" />
+    <meta property="og:site_name" content="Погода API на JavaScript" />
+    <link rel="icon" href="" type="image/x-icon" sizes="any" />
+    <link
+      rel="icon"
+      href="./assets/images/favicons/icon.svg"
+      type="image/svg+xml"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="./assets/images/favicons/apple-touch-icon.png"
+    />
+    <title>Погода API на JavaScript</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <p class="card__title">Погода</p>
+        <div class="card__weather">
+          <div class="card__description">
+            <img src="" alt="Иконка погоды" class="card__image" />
+            <p class="card__paragraph card__paragraph--temperature"></p>
+            <p class="card__paragraph card__paragraph--weather"></p>
+            <p class="card__paragraph card__paragraph--city"></p>
+          </div>
+          <div class="loader" id="loader">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div>
+      <input type="text" class="input input--city" id="city" />
+      <div class="settings">
+        <button type="button" class="btn" id="findWeather">
+          Получить данные о погоде
+        </button>
+        <div class="settings__checkbox">
+          <input type="checkbox" id="isFahrenheit" />
+          <label for="isFahrenheit" class="settings__label"
+            >Отображать температуру в Фаренгейтах</label
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
