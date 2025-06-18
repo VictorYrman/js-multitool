@@ -1,3 +1,6 @@
+import "./assets/styles/normalize.css";
+import "./assets/styles/style.css";
+
 import { initTheme } from "./assets/scripts/theme.js";
 import { initCalculator } from "./assets/scripts/core.js";
 import { initKeyboard } from "./assets/scripts/keyboard.js";

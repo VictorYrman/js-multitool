@@ -1,0 +1,93 @@
+/* Common Styles */
+
+html {
+  font-size: 16px;
+}
+
+p,
+.input,
+.btn {
+  font-size: 1.25rem;
+}
+
+.input {
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.btn {
+  color: white;
+  border-radius: 0.5rem;
+  background-color: black;
+  padding: 0.5rem 1rem;
+}
+
+.container {
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+span#level {
+  font-weight: 700;
+}
+
+/* Map Styles */
+
+.map {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.cell--wall {
+  background-image: url("../images/wall.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Inputs Styles */
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.input-wrapper input {
+  width: 100%;
+}
+
+/* Btns Styles */
+
+.btns {
+  display: flex;
+  gap: 1rem;
+}

@@ -19,13 +19,15 @@ module.exports = {
           process.env.NODE_ENV === "production"
             ? MiniCssExtractPlugin.loader
             : "style-loader",
-          ,
           "css-loader",
         ],
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)$/i,
-        use: "file-loader",
+        type: "asset/resource",
+        generator: {
+          filename: "assets/[name][ext][query]",
+        },
       },
     ],
   },
@@ -37,7 +39,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "index.html",
-      inject: "body",
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -52,14 +53,11 @@ module.exports = {
       filename: "style.css",
     }),
   ],
-  devServer: {
-    static: {
-      directory: path.join(__dirname, "dist"),
-    },
-    compress: true,
-    port: 9000,
-    hot: true,
-    historyApiFallback: true,
-  },
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
+  devServer: {
+    static: path.resolve(__dirname, "dist"),
+    compress: true,
+    port: 9999,
+    hot: true,
+  },
 };

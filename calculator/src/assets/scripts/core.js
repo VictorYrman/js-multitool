@@ -1,6 +1,4 @@
 import * as Display from "./display.js";
-// import * as Parser from "./parser.js";
-// import * as Operations from "./operations.js";
 import * as History from "./history.js";
 
 const keyMap = {
@@ -68,8 +66,6 @@ const handleButtonClick = (event) => {
 };
 
 const calculateResult = () => {
-  // const tokens = Parser.parseExpression(expression);
-  // const result = Operations.count(tokens);
   if (Display.getDisplayValue() === "") return;
 
   if (["+", "-", "*", "/"].includes(Display.getLastSymbol()))

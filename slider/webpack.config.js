@@ -19,13 +19,15 @@ module.exports = {
           process.env.NODE_ENV === "production"
             ? MiniCssExtractPlugin.loader
             : "style-loader",
-          ,
           "css-loader",
         ],
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)$/i,
-        use: "file-loader",
+        type: "asset/resource",
+        generator: {
+          filename: "assets/[name][ext][query]",
+        },
       },
     ],
   },
@@ -52,4 +54,10 @@ module.exports = {
     }),
   ],
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
+  devServer: {
+    static: path.resolve(__dirname, "dist"),
+    compress: true,
+    port: 9999,
+    hot: true,
+  },
 };

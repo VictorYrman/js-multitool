@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Игра: Лабиринт. Игра, в которой вы будете проходить лабиринты разного уровня сложности, чтобы добраться от старта до финиша, сами лабиринты не повторяются, а также вы можете редактировать поле, на котором играете."
+    />
+    <meta name="keywords" content="Игра, Лабиринт, поле, уровень" />
+    <meta name="author" content="TheYrman" />
+    <meta property="og:title" content="Игра: Лабиринт" />
+    <meta
+      property="og:description"
+      content="Игра: Лабиринт. Игра, в которой вы будете проходить лабиринты разного уровня сложности."
+    />
+    <meta
+      property="og:url"
+      content="https://js-multitool.netlify.app/labyrinth/src/"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./assets/images/og-image.png" />
+    <meta property="site_name" content="Игра: Лабиринт" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any" />
+    <link
+      rel="icon"
+      href="./assets/images/favicons/icon.svg"
+      type="image/svg+xml"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="./assets/images/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="canonical"
+      href="https://js-multitool.netlify.app/labyrinth/src/"
+    />
+    <title>Игра: Лабиринт</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Игра: Лабиринт</h1>
+      <p>Текущий уровень: <span id="level"></span></p>
+      <div class="map"></div>
+      <div class="inputs">
+        <div class="input-wrapper">
+          <label for="width">Ширина (количество блоков):</label>
+          <input type="number" class="input" id="width" value="5" min="5" />
+        </div>
+        <div class="input-wrapper">
+          <label for="height">Высота (количество блоков):</label>
+          <input type="number" class="input" id="height" value="5" min="5" />
+        </div>
+      </div>
+      <div class="btns">
+        <button type="button" class="btn" id="start">Старт</button>
+        <button type="button" class="btn" id="restart">Перезапустить</button>
+      </div>
+    </div>
+  </body>
+</html>
